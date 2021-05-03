@@ -7,15 +7,15 @@
             {{ timer }}
           </v-card-title>
           <v-card-text>
-            <v-list>
-              <v-list-tile
-                class="success mb-3"
-                @click="$emit('start')"
-                :disabled="state == 'running'"
-              >
-                <span class="white--text font-weight-bold text-uppercase">Start</span>
-              </v-list-tile>
-            </v-list>
+            <v-btn
+              block
+              class="success mb-3"
+              @click="$emit('start')"
+              :disabled="state == 'running'"
+              color="success"
+            >
+              Start
+            </v-btn>
           </v-card-text>
         </v-card>
       </v-flex>

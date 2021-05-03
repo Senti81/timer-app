@@ -50,7 +50,7 @@ export default {
           this.pause()
         }
         this.formattedTime = this.formatTime(this.currentTimer);
-        }, 1000/60)
+        }, 2)
     },
     formatTime (seconds) {
       let m = Math.floor(seconds / 60);

@@ -5,6 +5,8 @@
         :timer="formattedTime"
         :state="timerState"
         @start="start"
+        @pause="pause"
+        @stop="stop"
       />
     </v-content>
   </v-app>
@@ -43,6 +45,12 @@ export default {
       window.clearInterval(this.ticker);
       this.timerState = 'paused';
     },
+    stop () {
+      window.clearInterval(this.ticker)
+      this.currentTimer = 0;
+      this.formattedTime = "00:00";
+      this.timerState = "stopped";
+    },
     tick () {      
       this.ticker = setInterval(() => {
         this.currentTimer++;
@@ -50,7 +58,7 @@ export default {
           this.pause()
         }
         this.formattedTime = this.formatTime(this.currentTimer);
-        }, 2)
+        }, 1000)
     },
     formatTime (seconds) {
       let m = Math.floor(seconds / 60);

@@ -7,15 +7,32 @@
             {{ timer }}
           </v-card-title>
           <v-card-text>
-            <v-btn
-              block
-              class="success mb-3"
-              @click="$emit('start')"
-              :disabled="state == 'running'"
-              color="success"
-            >
-              Start
-            </v-btn>
+            <v-list>
+              <v-btn
+                block
+                class="success mb-3"
+                @click="$emit('start')"
+                :disabled="state == 'running'"
+              >
+                Start
+              </v-btn>             
+              <v-btn
+                block
+                class="warning mb-3"
+                @click="$emit('pause')"
+                :disabled="state == 'stopped' || state == 'paused'"
+              >
+                Pause
+              </v-btn>
+              <v-btn
+                block
+                class="error"
+                @click="$emit('stop')"
+                :disabled="state == 'stopped'"
+              >
+                Stop
+              </v-btn>
+            </v-list>
           </v-card-text>
         </v-card>
       </v-flex>

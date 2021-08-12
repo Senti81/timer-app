@@ -105,8 +105,28 @@ export default {
 </script>
 
 <style scoped>
+  .flex-container {
+    display: flex;
+  }
+  
+  .home {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    text-align: start;
+    margin: auto;
+  }
+
   .score {  
     text-align: center;
+    margin: auto;
+  }
+
+  .away {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    text-align: end;
     margin: auto;
   }
 
@@ -125,40 +145,6 @@ export default {
     h1 {
       font-size: 36px;
     }
-  }
-
-  .btn-container {
-    display: flex;
-  }
-
-  .btn-home{
-    flex: 1;
-    text-align: start;
-  }
-
-  .btn-away{
-    flex: 1;
-    text-align: end;
-  }
-
-  .flex-container {
-    display: flex;
-  }
-
-  .home {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    text-align: start;
-    margin: auto;
-  }
-
-  .away {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    text-align: end;
-    margin: auto;
-  }
+  }  
 
 </style>

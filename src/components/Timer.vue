@@ -1,16 +1,46 @@
 <template>
 	<v-container fluid>
     <v-layout>
-      <v-flex xs12 pa-3>
-        <div class="label">
-          <div class="score">
-            <h1>{{scoreHome}}</h1>
+      <v-flex xs12 pa-3>      
+        <div class="flex-container">
+          <div class="home">
+            <div>
+              <v-btn 
+                fab
+                large
+                class="success"
+                @click="increaseHome(9)"
+              >+</v-btn>
+            </div>
+            <div>
+              <v-btn                                 
+                fab
+                large              
+                class="error"
+                @click="decreaseHome(0)"
+              >-</v-btn>
+            </div>
           </div>
           <div class="score">
-            <h1>:</h1>
+            <h1>{{scoreHome}} : {{scoreAway}}</h1>
           </div>
-          <div class="score">
-            <h1>{{scoreAway}}</h1>
+          <div class="away">
+            <div>
+              <v-btn 
+                fab
+                large
+            class="success"
+                @click="increaseAway(9)"
+              >+</v-btn>
+            </div>
+            <div>
+              <v-btn 
+                fab
+                large
+                class="error"
+                @click="decreaseAway(0)"
+              >-</v-btn>
+            </div>
           </div>
         </div>
         <v-card>
@@ -42,32 +72,7 @@
                 :disabled="state == 'stopped'"
               >
                 Stop
-              </v-btn>
-              <div class="flex-container">
-                <div class="left">
-                  <v-btn 
-                    fab
-                    class="success"
-                    @click="increaseHome(9)"
-                    >+</v-btn>
-                  <v-btn
-                    fab
-                    class="error"
-                    @click="decreaseHome(0)"
-                    >-</v-btn>
-                </div>
-                <div class="right">
-                  <v-btn
-                    fab
-                    class="success"
-                    @click="increaseAway(9)"
-                    >+</v-btn>
-                  <v-btn
-                    fab
-                    class="error"
-                    @click="decreaseAway(0)">-</v-btn>
-                </div>
-              </div>     
+              </v-btn>                
             </v-list>
           </v-card-text>
         </v-card>
@@ -104,36 +109,47 @@ export default {
 </script>
 
 <style scoped>
-  .label {
-    text-align: center;    
-  }
-
-  .score {
-    display: inline-block;
-    width: 15%;
-    height: 150px;
-    margin: 20px;
+  .score {  
+    text-align: center;
   }
 
   h1 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 72px;
+    font-size: 144px;
+  }
+
+  .btn-container {
+    display: flex;
+  }
+
+  .btn-home{
+    flex: 1;
+    text-align: start;
+  }
+
+  .btn-away{
+    flex: 1;
+    text-align: end;
   }
 
   .flex-container {
     display: flex;
   }
 
-  .left{
+  .home {
     display: flex;
-    flex-direction: row;
-    width: 50%;
+    flex: 1;
+    flex-direction: column;
+    text-align: start;
+    margin: auto;
   }
 
-  .right{
+  .away {
     display: flex;
-    flex-direction: row-reverse;
-    width: 50%;
+    flex: 1;
+    flex-direction: column;
+    text-align: end;
+    margin: auto;
   }
 
 </style>

@@ -7,7 +7,6 @@
             <div>
               <v-btn 
                 fab
-                large
                 class="success"
                 @click="increaseHome(9)"
               >+</v-btn>
@@ -15,7 +14,6 @@
             <div>
               <v-btn                                 
                 fab
-                large              
                 class="error"
                 @click="decreaseHome(0)"
               >-</v-btn>
@@ -28,15 +26,13 @@
             <div>
               <v-btn 
                 fab
-                large
-            class="success"
+                class="success"
                 @click="increaseAway(9)"
               >+</v-btn>
             </div>
             <div>
               <v-btn 
                 fab
-                large
                 class="error"
                 @click="decreaseAway(0)"
               >-</v-btn>
@@ -111,11 +107,24 @@ export default {
 <style scoped>
   .score {  
     text-align: center;
+    margin: auto;
   }
 
   h1 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 144px;
+  }
+
+  @media screen and (max-width: 525px) {
+    h1 {
+      font-size: 72px;
+    }
+  }
+
+  @media screen and (max-width: 350px) {
+    h1 {
+      font-size: 36px;
+    }
   }
 
   .btn-container {
